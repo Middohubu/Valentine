@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #ffe6f0;
+  color: #b30059;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+.subtitle {
+  margin-bottom: 20px;
+}
+
+.captcha {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.captcha img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border: 4px solid transparent;
+}
+
+.captcha img:hover {
+  transform: scale(1.05);
+}
+
+#message {
+  margin-top: 20px;
+  font-weight: bold;
+}

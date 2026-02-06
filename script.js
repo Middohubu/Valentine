@@ -9,7 +9,7 @@ let currentRound = 0;
 let selectedTiles = new Set();
 
 
-const ASSETS_PATH = './assets/';
+const ASSETS_PATH = './images/';
 
 const TRAFFIC_LIGHT_URL = ASSETS_PATH + 'n.jpg';
 

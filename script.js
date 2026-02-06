@@ -8,8 +8,13 @@ const headerTitle = document.getElementById('instruction-text');
 let currentRound = 0;
 let selectedTiles = new Set();
 
-const TRAFFIC_LIGHT_URL = 'n.jpg';
-const VALENTINE_IMAGES = ['S.png','sanning.jpg','n.jpg'];
+// Ensure these filenames match your local folder exactly
+const FAKE_IMAGE = '164538803_291629262320699_4327235140465937645_n.jpg'; 
+const VALENTINE_IMAGES = [
+  'IMG_8648.jpg', 
+  '18839458_1532322660131907_3453999161975024742_o.jpg', 
+  'sanning.jpg'
+];
 
 checkbox.addEventListener('click', () => {
   if (currentRound !== 0) return;
@@ -24,7 +29,7 @@ checkbox.addEventListener('click', () => {
 function startRound1() {
   currentRound = 1;
   headerTitle.innerText = 'traffic lights';
-  setupGrid(TRAFFIC_LIGHT_URL, true);
+  setupGrid(FAKE_IMAGE, true);
 }
 
 function startRound2() {
@@ -50,14 +55,22 @@ function setupGrid(source, sliced) {
       tile.style.backgroundSize = '300% 300%';
       tile.style.backgroundPosition = `${col * 33.33}% ${row * 33.33}%`;
     } else {
-      tile.style.backgroundImage = `url('${source[i % source.length]}')`;
+      // Logic for personal photos
+      const imgPath = Array.isArray(source) ? source[i % source.length] : source;
+      tile.style.backgroundImage = `url('${imgPath}')`;
       tile.style.backgroundSize = 'cover';
       tile.style.backgroundPosition = 'center';
     }
 
     tile.addEventListener('click', () => {
-      tile.classList.toggle('selected');
-      selectedTiles.size ? verifyBtn.disabled=false : verifyBtn.disabled=true;
+      if (tile.classList.contains('selected')) {
+        tile.classList.remove('selected');
+        selectedTiles.delete(i);
+      } else {
+        tile.classList.add('selected');
+        selectedTiles.add(i);
+      }
+      verifyBtn.disabled = selectedTiles.size === 0;
     });
 
     grid.appendChild(tile);

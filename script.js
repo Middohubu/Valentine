@@ -8,8 +8,16 @@ const headerTitle = document.getElementById('instruction-text');
 let currentRound = 0;
 let selectedTiles = new Set();
 
-const TRAFFIC_LIGHT_URL = 'n.jpg';
-const VALENTINE_IMAGES = ['S.png','sanning.jpg','n.jpg'];
+
+const ASSETS_PATH = './assets/';
+
+const TRAFFIC_LIGHT_URL = ASSETS_PATH + 'n.jpg';
+
+const VALENTINE_IMAGES = [
+  ASSETS_PATH + 'S.png',
+  ASSETS_PATH + 'sanning.jpg',
+  ASSETS_PATH + 'n.jpg'
+];
 
 checkbox.addEventListener('click', () => {
   if (currentRound !== 0) return;

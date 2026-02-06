@@ -1,1 +1,91 @@
-body{font-family:Roboto, sans-serif;background:#f0f0f0;display:flex;justify-content:center;align-items:center;height:100vh;margin:0;} .hidden{display:none;} .captcha-box{background:#fff;border:1px solid #ccc;padding:10px;width:300px;display:flex;justify-content:space-between;} .checkbox{width:24px;height:24px;border:2px solid #ccc;cursor:pointer;} .checkbox.loading{border-radius:50%;border-top:2px solid blue;animation:spin 1s linear infinite;} @keyframes spin{to{transform:rotate(360deg);}} .captcha-modal{background:#fff;width:400px;padding:10px;} .grid-container{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;} .tile{aspect-ratio:1;cursor:pointer;} .tile.selected{outline:3px solid red;} .verify-btn{padding:10px;} .success-screen{position:fixed;inset:0;background:pink;display:flex;flex-direction:column;justify-content:center;align-items:center;}
+/* Layout */
+body {
+  font-family: Roboto, sans-serif;
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.main-container {
+  position: relative;
+}
+
+/* Utility */
+.hidden {
+  display: none !important;
+}
+
+/* Captcha checkbox */
+.captcha-box {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #ccc;
+  cursor: pointer;
+}
+
+.checkbox.loading {
+  border-radius: 50%;
+  border-top: 2px solid blue;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Captcha modal */
+.captcha-modal {
+  background: #fff;
+  width: 400px;
+  padding: 10px;
+  z-index: 20;
+}
+
+/* Grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.tile {
+  aspect-ratio: 1;
+  cursor: pointer;
+  background-color: #ddd; /* fallback so you SEE the tiles */
+}
+
+.tile.selected {
+  outline: 3px solid red;
+}
+
+/* Button */
+.verify-btn {
+  padding: 10px;
+}
+
+/* Success screen */
+.success-screen {
+  position: fixed;
+  inset: 0;
+  background: pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}

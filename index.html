@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security Check</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="main-container">
+  <div class="captcha-box" id="step-checkbox">
+    <div class="checkbox-container">
+      <div class="checkbox" id="checkbox-btn"></div>
+      <label>I'm not a robot</label>
+    </div>
+    <div class="captcha-logo">
+      <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png">
+      <span>reCAPTCHA</span>
+      <div class="privacy-links">Privacy - Terms</div>
+    </div>
+  </div>
+
+  <div class="captcha-modal hidden" id="captcha-modal">
+    <div class="modal-header">
+      <h3>Select all images with</h3>
+      <h1 id="instruction-text">traffic lights</h1>
+      <p>Click verify once there are none left.</p>
+    </div>
+    <div class="grid-container" id="grid"></div>
+    <div class="modal-footer">
+      <div class="icons">↺ 🎧 ⓘ</div>
+      <button class="verify-btn" id="verify-btn" disabled>VERIFY</button>
+    </div>
+  </div>
+
+  <div class="success-screen hidden" id="success-screen">
+    <h1>❤️ Happy Valentine's Day! ❤️</h1>
+    <p>You have successfully confirmed that you possess a heart.</p>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

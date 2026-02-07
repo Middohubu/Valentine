@@ -630,7 +630,7 @@
                     <div class="puzzle-grid-wrap" id="puzzleGridWrap">
                         <div class="puzzle-grid" id="puzzleGrid"></div>
                         <div class="puzzle-full-image-overlay" id="puzzleFullImageOverlay">
-                            <img src="image/full-image.png" alt="" />
+                            <img src="Image/full-image.png" alt="" />
                         </div>
                     </div>
                 </div>
@@ -726,7 +726,7 @@
                     tile.classList.add('empty');
                     // No image: empty space is transparent until puzzle is solved
                 } else {
-                    tile.style.backgroundImage = `url('image/tile-${piece}.png')`;
+                    tile.style.backgroundImage = `url('Image/tile-${piece}.png')`;
                     tile.onclick = () => moveTile(index);
                 }
                 
@@ -760,7 +760,7 @@
             const puzzleRevealText = document.getElementById('puzzleRevealText');
             const puzzleFullImageOverlay = document.getElementById('puzzleFullImageOverlay');
             const emptyTile = puzzleGrid.querySelector('.puzzle-tile.empty');
-            if (emptyTile) emptyTile.style.backgroundImage = "url('image/tile-3.png')";
+            if (emptyTile) emptyTile.style.backgroundImage = "url('Image/tile-3.png')";
             puzzleContainer.classList.add('completed');
             puzzleGrid.classList.add('merging');
             setTimeout(() => {
